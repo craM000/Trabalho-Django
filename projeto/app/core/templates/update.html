@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/modelo.css' %}">
+</head>
+<body>
+    <div id="caixa">
+        <h3>Crud Exemplo</h3>
+
+        <div id="usuarios">
+            <ul>
+                {% for pessoa in pessoas %}
+                    <li> {{pessoa.id}} - {{pessoa.nome}} 
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div id="input">
+            <form method="POST" action="{% url 'update' pessoa.id %}">
+                {% csrf_token %}
+                <!-- Campos do formulário -->
+                <input type="text" name="nome" value="{{ pessoa.nome }}">
+                <input type="text" name="sobrenome" value="{{ pessoa.sobrenome }}">
+                <input type="text" name="endereco" value="{{ pessoa.endereco }}">
+                <input type="text" name="cpf" value="{{ pessoa.cpf }}">
+                <div id="botao">
+                    <button type="submit">Salvar</button>
+                </div>
+            </form>
+            
+        </div>
+    </div>
+</body>
+</html>

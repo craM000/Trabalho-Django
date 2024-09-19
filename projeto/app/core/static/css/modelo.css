@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+#caixa {
+    width: 420px;
+    height: 350px;
+    background: gray;
+    color: white;
+    border: 2px black;
+    border-radius: 10px;
+}
+
+#caixa h3 {
+    font-size: 36px;
+    text-align: center;
+}
+
+#caixa #usuarios{
+    color: white;
+    padding: 0 10px;
+}
+
+#caixa #usuarios #ed{
+    border: 2px;
+    border-radius: 5px;
+    padding: .5px 10px .5px 10px;
+    background: greenyellow;
+    color: white;
+}
+
+#caixa #usuarios #ed p a{
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+#caixa #usuarios #ex{
+    border: 2px;
+    border-radius: 5px;
+    padding: .5px 10px .5px 10px;
+    background: red;
+    color: white;
+}
+
+#caixa #usuarios #ex p a{
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+#caixa #input {
+    width: 100%;
+    height: 50px;
+    margin: 10px 0;
+}
+
+#caixa input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 40px;
+    font-size: 12px;
+    color: white;
+    padding: 5px 5px 5px 10px;
+}
+
+#caixa input::placeholder{
+    color: white;
+}
+
+#caixa #input #botao{
+    width: 50%;
+    height: 30px;
+    align-items: center;
+    background: white;
+    border: none;
+    outline: none;
+    border: 2px black;
+    border-radius: 10px;
+}
+
+#caixa #input #caixa_bt{
+    justify-content: center;
+    display: flex;
+    padding: 5px;
+}

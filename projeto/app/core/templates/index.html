@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/modelo.css' %}">
+</head>
+<body>
+    <div id="caixa">
+        <h3>Crud Exemplo</h3>
+
+        <div id="usuarios">
+            <ul>
+                {% for pessoa in pessoas %}
+                    <li> {{pessoa.id}} - {{pessoa.nome}} 
+                        <a id="ed" href="{% url 'editar' pessoa.id %}">Editar</a> |
+                        <a id="ex" href="{% url 'delete' pessoa.id %}">Deletar</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div id="input">
+            <form action="{% url 'salvar' %}" method="post">
+                {% csrf_token %}
+                <input type="text" name="nome" placeholder="Nome"><br>
+                <input type="text" name="sobrenome" placeholder="Sobrenome"><br>
+                <input type="text" name="endereco" placeholder="Endereço"><br>
+                <input type="text" name="cpf" placeholder="Cpf"><br>
+                <div id="caixa_bt">
+                    <button id="botao" type="submit">Salvar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
